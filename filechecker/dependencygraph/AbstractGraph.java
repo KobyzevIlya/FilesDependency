@@ -1,8 +1,8 @@
 package filechecker.dependencygraph;
 
 import java.awt.*;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 
 /**
  * This abstract class defines the structure of an oriented graph for further operations on it.<br>

@@ -1,6 +1,6 @@
 package filechecker.dependencygraph;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * The interface should have told you that the graph can be sorted in any of the provided ways.

@@ -12,6 +12,10 @@ import java.util.HashSet;
 public class FilesDependencyGraph extends AbstractGraph<File> {
     private final FileHandler fileHandler;
 
+    /**
+     * Constructor from the FileHandler class. Allocates memory for the node container.
+     * @param fileHandler link to file handler.
+     */
     public FilesDependencyGraph(FileHandler fileHandler) {
         nodes = new HashSet<>();
         this.fileHandler = fileHandler;
