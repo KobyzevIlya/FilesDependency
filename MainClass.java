@@ -1,4 +1,4 @@
-package filechecker;
+import filechecker.AppBuilder;
 
 public class MainClass {
     public static void main(String[] args) {

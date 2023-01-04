@@ -13,7 +13,7 @@ public class AppBuilder {
     private final FilesDependencyGraph dependencyGraph;
     private final ContentsHeap contentsHeap;
 
-    AppBuilder() {
+    public AppBuilder() {
         mainFolder = ConsoleHandler.getMainFolder();
         FileHandler fileHandler = new FileHandler(mainFolder.getAbsolutePath());
         dependencyGraph = new FilesDependencyGraph(fileHandler);
