@@ -5,7 +5,15 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Class that allows reading information from the console or writing messages there.
+ */
 abstract public class ConsoleHandler {
+    /**
+     * Reads the path to the main folder from the console. The path must be absolute.
+     *
+     * @return the main folder as a <code>File</code> class
+     */
     public static File getMainFolder() {
         getFilenameMessage();
 
@@ -20,18 +28,33 @@ abstract public class ConsoleHandler {
         return mainFolder;
     }
 
+    /**
+     * Prints message to the console about the wrong directory.
+     */
     public static void incorrectDirectoryMessage() {
         System.out.print("->Incorrect Directory!<-\n");
     }
 
+    /**
+     * Prints message to the console about the wrong requirement in file content.
+     */
     public static void incorrectRequireMessage() {
         System.out.print("->Incorrect Require File!<-\n");
     }
 
+    /**
+     * Prints input file require message.
+     */
     protected static void getFilenameMessage() {
         System.out.print("->Input main folder absolute path<-\n");
     }
 
+    /**
+     * Prints a message about the loop to the console. If there is no cycle, it displays "No cycles", otherwise it displays
+     * the cycle reason file and exits the application with code 0.
+     *
+     * @param file cycle reason file
+     */
     public static void cycleInfoMessage(File file) {
         if (file == null) {
             System.out.print("->No cycles<-\n");
@@ -40,6 +63,12 @@ abstract public class ConsoleHandler {
         }
     }
 
+    /**
+     * Displays paths relative to the main folder, names and contents of files from the <code>List</code>.
+     *
+     * @param files      list of files to output.
+     * @param mainFolder main folder handler. Needed to remove its path from the file path.
+     */
     public static void printFilesWithContents(List<File> files, File mainFolder) {
         for (var file : files) {
             try {
@@ -54,6 +83,11 @@ abstract public class ConsoleHandler {
         }
     }
 
+    /**
+     * Displays a message that the file does not exist and exits the application with code 0.
+     *
+     * @param file missing file handler
+     */
     public static void fileNotFoundMessage(File file) {
         System.out.print("->Cannot find file " + file.getAbsolutePath() + "\n");
         System.exit(0);

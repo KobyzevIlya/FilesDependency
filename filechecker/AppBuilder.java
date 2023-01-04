@@ -8,18 +8,29 @@ import filechecker.heap.ContentsHeap;
 import java.io.File;
 import java.util.List;
 
+/**
+ * This class creates instances of other classes and organizes their work.
+ */
 public class AppBuilder {
     private final File mainFolder;
     private final FilesDependencyGraph dependencyGraph;
     private final ContentsHeap contentsHeap;
 
-    AppBuilder() {
+    /**
+     *
+     * The constructor calls a method that reads the path to the main folder.
+     */
+    public AppBuilder() {
         mainFolder = ConsoleHandler.getMainFolder();
         FileHandler fileHandler = new FileHandler(mainFolder.getAbsolutePath());
         dependencyGraph = new FilesDependencyGraph(fileHandler);
         contentsHeap = new ContentsHeap();
     }
 
+    /**
+     * Main work cycle. All folders and files are located, files are added to the dependency graph, the graph is checked
+     * for a cycle and sorted topologically.
+     */
     public void buildApp() {
         contentsHeap.releaseContents(mainFolder);
 
