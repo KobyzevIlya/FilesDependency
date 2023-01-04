@@ -29,7 +29,7 @@ abstract public class ConsoleHandler {
     }
 
     protected static void getFilenameMessage() {
-        System.out.print("->Input absolute file path<-\n");
+        System.out.print("->Input main folder absolute path<-\n");
     }
 
     public static void cycleInfoMessage(File file) {
@@ -44,7 +44,7 @@ abstract public class ConsoleHandler {
         for (var file : files) {
             try {
                 Scanner scanner = new Scanner(file);
-                System.out.print(file.getAbsolutePath().substring(mainFolder.getAbsolutePath().length() + 1) + "\n");
+                System.out.print("\n" + file.getAbsolutePath().substring(mainFolder.getAbsolutePath().length() + 1) + "\n");
                 while (scanner.hasNextLine()) {
                     System.out.print("   " + scanner.nextLine() + "\n");
                 }
