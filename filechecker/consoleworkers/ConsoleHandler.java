@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * A class that allows you to read information from the console or write messages there.
+ * Class that allows reading information from the console or writing messages there.
  */
 abstract public class ConsoleHandler {
     /**

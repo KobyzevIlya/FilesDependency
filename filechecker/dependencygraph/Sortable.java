@@ -3,7 +3,7 @@ package filechecker.dependencygraph;
 import java.util.List;
 
 /**
- * The interface should have told you that the graph can be sorted in any of the provided ways.
+ * The interface that says that the graph can be sorted in any of the proposed ways.
  * @param <T> this template is specified the data type in the nodes of the graph.
  */
 public interface Sortable<T> {
