@@ -6,18 +6,16 @@ import filechecker.file.FileHandler;
 import filechecker.heap.ContentsHeap;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 public class AppBuilder {
     private final File mainFolder;
     private final FilesDependencyGraph dependencyGraph;
     private final ContentsHeap contentsHeap;
-    private final FileHandler fileHandler;
 
     AppBuilder() {
         mainFolder = ConsoleHandler.getMainFolder();
-        fileHandler = new FileHandler(mainFolder.getAbsolutePath());
+        FileHandler fileHandler = new FileHandler(mainFolder.getAbsolutePath());
         dependencyGraph = new FilesDependencyGraph(fileHandler);
         contentsHeap = new ContentsHeap();
     }
@@ -31,6 +29,9 @@ public class AppBuilder {
 
         File problemFile = dependencyGraph.checkCycles();
         ConsoleHandler.cycleInfoMessage(problemFile);
+        if (problemFile != null) {
+            return;
+        }
 
         List<File> files = dependencyGraph.topologicalSort();
         ConsoleHandler.printFilesWithContents(files);

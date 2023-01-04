@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.HashSet;
 
 public class FilesDependencyGraph extends AbstractGraph<File> {
-    private FileHandler fileHandler;
+    private final FileHandler fileHandler;
 
     public FilesDependencyGraph(FileHandler fileHandler) {
         nodes = new HashSet<>();

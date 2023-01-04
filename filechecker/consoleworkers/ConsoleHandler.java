@@ -49,9 +49,13 @@ abstract public class ConsoleHandler {
                     System.out.print("   " + scanner.nextLine() + "\n");
                 }
             } catch (FileNotFoundException exception) {
-                System.out.print("FNF");
-                System.exit(0); //todo
+                fileNotFoundMessage(file);
             }
         }
+    }
+
+    public static void fileNotFoundMessage(File file) {
+        System.out.print("->Cannot find file " + file.getAbsolutePath() + "\n");
+        System.exit(0);
     }
 }

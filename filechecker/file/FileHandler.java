@@ -19,12 +19,14 @@ public class FileHandler {
         Scanner scanner = null;
         try {
             scanner = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            System.exit(1000); //todo
+        } catch (FileNotFoundException exception) {
+            ConsoleHandler.fileNotFoundMessage(file);
         }
         List<File> requires = new ArrayList<>();
 
-        while (scanner.hasNextLine()) {
+        while (true) {
+            assert scanner != null;
+            if (!scanner.hasNextLine()) break;
             String currentString = scanner.nextLine();
 
             if (currentString.startsWith("require")) {
