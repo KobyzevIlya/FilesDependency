@@ -34,7 +34,7 @@ public class AppBuilder {
         }
 
         List<File> files = dependencyGraph.topologicalSort();
-        ConsoleHandler.printFilesWithContents(files);
+        ConsoleHandler.printFilesWithContents(files, mainFolder);
     }
 
 }

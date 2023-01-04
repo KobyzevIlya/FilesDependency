@@ -40,11 +40,11 @@ abstract public class ConsoleHandler {
         }
     }
 
-    public static void printFilesWithContents(List<File> files) {
+    public static void printFilesWithContents(List<File> files, File mainFolder) {
         for (var file : files) {
             try {
                 Scanner scanner = new Scanner(file);
-                System.out.print(file.getName() + "\n");
+                System.out.print(file.getAbsolutePath().substring(mainFolder.getAbsolutePath().length() + 1) + "\n");
                 while (scanner.hasNextLine()) {
                     System.out.print("   " + scanner.nextLine() + "\n");
                 }
