@@ -15,8 +15,13 @@ public class FileHandler {
         this.mainFolderPath = mainFolderPath;
     }
 
-    public List<File> getRequires(File file) throws FileNotFoundException {
-        Scanner scanner = new Scanner(file);
+    public List<File> getRequires(File file) {
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            System.exit(1000); //todo
+        }
         List<File> requires = new ArrayList<>();
 
         while (scanner.hasNextLine()) {
@@ -25,7 +30,7 @@ public class FileHandler {
             if (currentString.startsWith("require")) {
                 File requirement = new File(mainFolderPath + "\\" + currentString.substring(9, currentString.length() - 1));
 
-                if (!file.isFile()) {
+                if (!file.exists() || !file.isFile()) {
                     ConsoleWriter.incorrectRequireMessage();
                     System.exit(0);
                 }

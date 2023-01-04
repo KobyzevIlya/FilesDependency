@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 abstract public class ConsoleReader {
     public static File getMainFolder() {
+        ConsoleWriter.getFilenameMessage();
+
         Scanner scanner = new Scanner(System.in);
         File mainFolder = new File(scanner.nextLine());
 

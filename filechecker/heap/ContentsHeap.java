@@ -18,8 +18,16 @@ public class ContentsHeap {
         files.add(file);
     }
 
+    public List<File> getFiles() {
+        return files;
+    }
+
     public void addFolder(File folder) {
         folders.add(folder);
+    }
+
+    public List<File> getFolders() {
+        return folders;
     }
 
     public void releaseContents(File mainFolder) {
