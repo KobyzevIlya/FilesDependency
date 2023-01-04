@@ -4,14 +4,16 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ContentsHeap {
     private final List<File> files;
     private final List<File> folders;
 
     public ContentsHeap() {
-        files = new ArrayList<>();
-        folders = new ArrayList<>();
+        files = new CopyOnWriteArrayList<>();
+        folders = new CopyOnWriteArrayList<>();
     }
 
     public void addFile(File file) {

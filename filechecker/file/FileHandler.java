@@ -1,6 +1,6 @@
 package filechecker.file;
 
-import filechecker.consoleworkers.ConsoleWriter;
+import filechecker.consoleworkers.ConsoleHandler;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public class FileHandler {
                 File requirement = new File(mainFolderPath + "\\" + currentString.substring(9, currentString.length() - 1));
 
                 if (!file.exists() || !file.isFile()) {
-                    ConsoleWriter.incorrectRequireMessage();
+                    ConsoleHandler.incorrectRequireMessage();
                     System.exit(0);
                 }
 

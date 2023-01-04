@@ -1,16 +1,11 @@
 package filechecker.dependencygraph;
 
-import filechecker.consoleworkers.ConsoleWriter;
 import filechecker.file.FileHandler;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class FilesDependencyGraph extends AbstractGraph<File> {
-    private Set<Node<File>> nodes;
     private FileHandler fileHandler;
 
     public FilesDependencyGraph(FileHandler fileHandler) {

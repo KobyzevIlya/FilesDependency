@@ -1,14 +1,11 @@
 package filechecker.dependencygraph;
 
 import java.awt.*;
-import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public abstract class AbstractGraph<T> implements Sortable<T> {
-    private Set<Node<T>> nodes;
+    protected Set<Node<T>> nodes;
 
     public void addNode(T data) {
         nodes.add(new Node<>(data));
@@ -24,35 +21,55 @@ public abstract class AbstractGraph<T> implements Sortable<T> {
     }
 
     //https://e-maxx.ru/algo/finding_cycle
-    public Node<T> checkCycles() {
-        Map<Node<T>, Color> colorMap = new HashMap<>();
-        Node<T> cycleStart = null;
-        Node<T> cycleEnd = null;
-
+    public T checkCycles() {
+        Node<T> possibleProblem = null;
         for (var node : nodes) {
-            if (dfsCheckCycles(node, colorMap, cycleStart)) {
+            Map<Node<T>, Color> colorMap = new HashMap<>();
+            possibleProblem = dfsCheckCycles(node, colorMap);
+            if (possibleProblem != null) {
                 break;
             }
         }
-        return cycleStart;
+        if (possibleProblem == null) {
+            return null;
+        }
+        return possibleProblem.getData();
     }
 
-    private boolean dfsCheckCycles(Node<T> node, Map<Node<T>, Color> colorMap, Node<T> cycleStart) {
-        colorMap.put(node, Color.gray);
+    private Node<T> dfsCheckCycles(Node<T> node, Map<Node<T>, Color> colorMap) {
+        colorMap.put(node, Color.black);
         for (var to : node.getDescendants()) {
             if (!colorMap.containsKey(to)) {
-                return dfsCheckCycles(to, colorMap, cycleStart);
-            } else if (colorMap.get(to) == Color.gray) {
-                cycleStart = to;
-                return true;
+                return dfsCheckCycles(to, colorMap);
+            } else if (colorMap.get(to) == Color.black) {
+                return node;
             }
         }
-        colorMap.put(node, Color.black);
-        return false;
+        return null;
     }
 
+    // https://e-maxx.ru/algo/topological_sort
     @Override
     public List<T> topologicalSort() {
-        return null;
+        List<T> sortedData = new ArrayList<>();
+        Map<Node<T>, Color> colorMap = new HashMap<>();
+        for (var node : nodes) {
+            if (!colorMap.containsKey(node)) {
+                dfsTopologicalSort(node, colorMap, sortedData);
+            }
+        }
+
+        Collections.reverse(sortedData);
+        return sortedData;
+    }
+
+    private void dfsTopologicalSort(Node<T> node, Map<Node<T>, Color> colorMap, List<T> sortedData) {
+        colorMap.put(node, Color.black);
+        for (var to : node.getDescendants()) {
+            if (!colorMap.containsKey(to) || colorMap.get(to) == Color.white) {
+                dfsTopologicalSort(to, colorMap, sortedData);
+            }
+        }
+        sortedData.add(node.getData());
     }
 }

@@ -1,11 +1,13 @@
 package filechecker;
 
-import filechecker.consoleworkers.ConsoleReader;
+import filechecker.consoleworkers.ConsoleHandler;
 import filechecker.dependencygraph.FilesDependencyGraph;
 import filechecker.file.FileHandler;
 import filechecker.heap.ContentsHeap;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 public class AppBuilder {
     private final File mainFolder;
@@ -14,7 +16,7 @@ public class AppBuilder {
     private final FileHandler fileHandler;
 
     AppBuilder() {
-        mainFolder = ConsoleReader.getMainFolder();
+        mainFolder = ConsoleHandler.getMainFolder();
         fileHandler = new FileHandler(mainFolder.getAbsolutePath());
         dependencyGraph = new FilesDependencyGraph(fileHandler);
         contentsHeap = new ContentsHeap();
@@ -22,9 +24,16 @@ public class AppBuilder {
 
     public void buildApp() {
         contentsHeap.releaseContents(mainFolder);
+
         for (var content : contentsHeap.getFiles()) {
             dependencyGraph.addNode(content);
         }
+
+        File problemFile = dependencyGraph.checkCycles();
+        ConsoleHandler.cycleInfoMessage(problemFile);
+
+        List<File> files = dependencyGraph.topologicalSort();
+        ConsoleHandler.printFilesWithContents(files);
     }
 
 }
