@@ -5,6 +5,10 @@ import filechecker.file.FileHandler;
 import java.io.File;
 import java.util.HashSet;
 
+
+/**
+ * Graph that has a File class as its node contents. Some methods are redefined to work with files.
+ */
 public class FilesDependencyGraph extends AbstractGraph<File> {
     private final FileHandler fileHandler;
 
