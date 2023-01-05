@@ -1,4 +1,4 @@
-package filechecker.dependencygraph;
+package ru.hse.filechecker.dependencygraph;
 
 import java.awt.*;
 import java.util.List;

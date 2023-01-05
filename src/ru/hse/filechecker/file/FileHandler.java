@@ -1,6 +1,6 @@
-package filechecker.file;
+package ru.hse.filechecker.file;
 
-import filechecker.consoleworkers.ConsoleHandler;
+import ru.hse.filechecker.consoleworkers.ConsoleHandler;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package filechecker.heap;
+package ru.hse.filechecker.heap;
 
 import java.io.File;
 import java.util.ArrayList;

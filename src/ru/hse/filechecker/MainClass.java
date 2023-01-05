@@ -1,4 +1,4 @@
-import filechecker.AppBuilder;
+package ru.hse.filechecker;
 
 public class MainClass {
     public static void main(String[] args) {

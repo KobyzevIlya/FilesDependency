@@ -1,4 +1,4 @@
-package filechecker.consoleworkers;
+package ru.hse.filechecker.consoleworkers;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Class that allows reading information from the console or writing messages there.
  */
-abstract public class ConsoleHandler {
+public class ConsoleHandler {
     /**
      * Reads the path to the main folder from the console. The path must be absolute.
      *

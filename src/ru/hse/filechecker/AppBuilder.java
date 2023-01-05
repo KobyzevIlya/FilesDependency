@@ -1,9 +1,9 @@
-package filechecker;
+package ru.hse.filechecker;
 
-import filechecker.consoleworkers.ConsoleHandler;
-import filechecker.dependencygraph.FilesDependencyGraph;
-import filechecker.file.FileHandler;
-import filechecker.heap.ContentsHeap;
+import ru.hse.filechecker.consoleworkers.ConsoleHandler;
+import ru.hse.filechecker.dependencygraph.FilesDependencyGraph;
+import ru.hse.filechecker.file.FileHandler;
+import ru.hse.filechecker.heap.ContentsHeap;
 
 import java.io.File;
 import java.util.List;

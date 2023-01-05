@@ -1,6 +1,6 @@
-package filechecker.dependencygraph;
+package ru.hse.filechecker.dependencygraph;
 
-import filechecker.file.FileHandler;
+import ru.hse.filechecker.file.FileHandler;
 
 import java.io.File;
 import java.util.HashSet;
