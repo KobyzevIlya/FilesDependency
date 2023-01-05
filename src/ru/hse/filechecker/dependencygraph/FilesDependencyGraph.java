@@ -36,7 +36,6 @@ public class FilesDependencyGraph extends AbstractGraph<File> {
                 parent = getNode(requirement);
             }
             parent.addDescendant(currentNode);
-            currentNode.addParent(parent);
         }
     }
 }

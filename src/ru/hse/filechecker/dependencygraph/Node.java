@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class Node<T> {
     private final T data;
-    private final List<Node<T>> parents;
     private final List<Node<T>> descendants;
 
     /**
@@ -22,16 +21,7 @@ public class Node<T> {
      */
     protected Node(T data) {
         this.data = data;
-        parents = new ArrayList<>();
         descendants = new ArrayList<>();
-    }
-
-    /**
-     * Adds a parent to this node. A node can have more than one parent.
-     * @param parent link to the parent <code>Node</code> class.
-     */
-    protected void addParent(Node<T> parent) {
-        parents.add(parent);
     }
 
     /**
