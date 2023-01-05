@@ -1,4 +1,4 @@
 /**
  * Contains the class that works with the console
  */
-package filechecker.consoleworkers;
+package ru.hse.src.filechecker.consoleworkers;

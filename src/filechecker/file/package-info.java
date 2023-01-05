@@ -1,4 +1,4 @@
 /**
  * Contains the file processing class
  */
-package filechecker.file;
+package ru.hse.src.filechecker.file;

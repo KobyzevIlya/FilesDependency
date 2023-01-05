@@ -1,4 +1,4 @@
-package filechecker.dependencygraph;
+package ru.hse.src.filechecker.dependencygraph;
 
 import java.util.ArrayList;
 import java.util.List;

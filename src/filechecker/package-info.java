@@ -1,4 +1,4 @@
 /**
  * Basic package for the application. Provides all classes needed for dependency checking.
  */
-package filechecker;
+package ru.hse.src.filechecker;
