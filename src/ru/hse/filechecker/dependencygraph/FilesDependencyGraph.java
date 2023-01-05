@@ -14,6 +14,7 @@ public class FilesDependencyGraph extends AbstractGraph<File> {
 
     /**
      * Constructor from the FileHandler class. Allocates memory for the node container.
+     *
      * @param fileHandler link to file handler.
      */
     public FilesDependencyGraph(FileHandler fileHandler) {

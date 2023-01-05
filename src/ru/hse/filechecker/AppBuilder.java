@@ -17,7 +17,6 @@ public class AppBuilder {
     private final ContentsHeap contentsHeap;
 
     /**
-     *
      * The constructor calls a method that reads the path to the main folder.
      */
     public AppBuilder() {

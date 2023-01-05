@@ -9,7 +9,8 @@ import java.util.Scanner;
  * Class that allows reading information from the console or writing messages there.
  */
 public final class ConsoleHandler {
-    private ConsoleHandler() {}
+    private ConsoleHandler() {
+    }
 
     /**
      * Reads the path to the main folder from the console. The path must be absolute.

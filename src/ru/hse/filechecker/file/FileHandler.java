@@ -16,6 +16,7 @@ public class FileHandler {
 
     /**
      * Constructor from main folder.
+     *
      * @param mainFolderPath main folder absolute path.
      */
     public FileHandler(String mainFolderPath) {
@@ -25,6 +26,7 @@ public class FileHandler {
     /**
      * Reads the file and looks inside the word <code>require</code>. Then returns a list of requirements.<br>
      * This method also validates the request and calls incorrectRequireMessage from ConsoleHandler if necessary.
+     *
      * @param file <code>File</code> class of file to read.
      * @return <Code>List</Code> of files that current file requires.
      * @see ConsoleHandler

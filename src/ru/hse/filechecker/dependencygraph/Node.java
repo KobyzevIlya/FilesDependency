@@ -17,6 +17,7 @@ public class Node<T> {
 
     /**
      * Constructor from content
+     *
      * @param data content of node.
      */
     protected Node(T data) {
@@ -26,6 +27,7 @@ public class Node<T> {
 
     /**
      * Adds a descendant to this node. A node can have more than one descendant.
+     *
      * @param descendant link to the descendant <code>Node</code> class.
      */
     protected void addDescendant(Node<T> descendant) {
@@ -34,6 +36,7 @@ public class Node<T> {
 
     /**
      * Returns descendants of the node.
+     *
      * @return <code>List</code> of descendants.
      */
     protected List<Node<T>> getDescendants() {
@@ -42,6 +45,7 @@ public class Node<T> {
 
     /**
      * Returns the content of the node.
+     *
      * @return link to node template content
      */
     protected T getData() {
