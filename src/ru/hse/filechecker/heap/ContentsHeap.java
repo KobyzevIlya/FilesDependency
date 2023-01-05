@@ -31,15 +31,6 @@ public class ContentsHeap {
     }
 
     /**
-     * Returns a <code>List</code> of folders.
-     *
-     * @return direct link to container with folders.
-     */
-    public List<File> getFolders() {
-        return folders;
-    }
-
-    /**
      * Finds all folders and files in the main folder and adds them to their respective containers.
      *
      * @param mainFolder class <code>File</code> of main folder

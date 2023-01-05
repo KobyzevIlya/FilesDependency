@@ -17,15 +17,6 @@ public class Node<T> {
     private final List<Node<T>> descendants;
 
     /**
-     * Basic constructor. Allocates memory for <code>parents</code> and <code>descendants</code> containers. The contents are set to <code>null</code>.
-     */
-    protected Node() {
-        data = null;
-        parents = new ArrayList<>();
-        descendants = new ArrayList<>();
-    }
-
-    /**
      * Constructor from content
      * @param data content of node.
      */
@@ -41,14 +32,6 @@ public class Node<T> {
      */
     protected void addParent(Node<T> parent) {
         parents.add(parent);
-    }
-
-    /**
-     * Returns parents of the node.
-     * @return <code>List</code> of parents.
-     */
-    protected List<Node<T>> getParents() {
-        return parents;
     }
 
     /**
