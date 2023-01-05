@@ -8,7 +8,9 @@ import java.util.Scanner;
 /**
  * Class that allows reading information from the console or writing messages there.
  */
-public class ConsoleHandler {
+public final class ConsoleHandler {
+    private ConsoleHandler() {}
+
     /**
      * Reads the path to the main folder from the console. The path must be absolute.
      *
@@ -45,7 +47,7 @@ public class ConsoleHandler {
     /**
      * Prints input file require message.
      */
-    protected static void getFilenameMessage() {
+    private static void getFilenameMessage() {
         System.out.print("->Input main folder absolute path<-\n");
     }
 
