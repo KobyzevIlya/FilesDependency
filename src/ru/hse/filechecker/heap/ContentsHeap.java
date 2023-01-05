@@ -1,4 +1,4 @@
-package filechecker.heap;
+package ru.hse.filechecker.heap;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -28,15 +28,6 @@ public class ContentsHeap {
      */
     public List<File> getFiles() {
         return files;
-    }
-
-    /**
-     * Returns a <code>List</code> of folders.
-     *
-     * @return direct link to container with folders.
-     */
-    public List<File> getFolders() {
-        return folders;
     }
 
     /**
