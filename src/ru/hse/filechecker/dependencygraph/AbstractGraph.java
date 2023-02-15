@@ -67,7 +67,7 @@ public abstract class AbstractGraph<T> implements Sortable<T> {
         colorMap.put(node, Color.black);
         for (var to : node.getDescendants()) {
             if (!colorMap.containsKey(to)) {
-                return dfsCheckCycles(to, colorMap);
+                dfsCheckCycles(to, colorMap);
             } else if (colorMap.get(to) == Color.black) {
                 return node;
             }
